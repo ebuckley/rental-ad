@@ -17,7 +17,6 @@ const imgs = [
   { url: studio07, alt: 'Queen size bed' },
   { url: featureStudio, alt: 'Studio with sunshine and patio' },
   { url: studio03, alt: 'Sunny private patio' },
-  { url: studio04, alt: 'Ready to settle kitchen' },
   { url: studio05, alt: 'Fully stocked Kitchenette' },
   { url: studio06, alt: 'Spacious wardrobe' }
 ]
@@ -25,7 +24,7 @@ const imgs = [
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleImageClick = (index) => {
+  const handleImageClick = (index: any) => {
     // setSelectedImage(index);
   };
   return (
@@ -39,7 +38,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <div className="bg-gray-100">
+      <div className="bg-amber-200">
         <header className="relative h-screen">
           {/* Background Image */}
           <div
@@ -56,8 +55,8 @@ export default function Home() {
             <h1 className="text-6xl font-bold mb-4 font-serif">Seaside Bliss in Christchurch</h1>
 
             {/* Call to Action */}
-            <p className="text-xl font-zilla">
-              Book Your Seaside Escape Now: Your Perfect Getaway Awaits!
+            <p className="text-xl font-zilla max-w-lg">
+            Welcome to our exquisite modern studio unit nestled in the heart of Redcliffs, just footsteps  away from the pristine shores of the estuary beach.
             </p>
             {/* You can add a button here for the call to action */}
             {/* put this at the end of the flex layout */}
@@ -70,20 +69,18 @@ export default function Home() {
               Features and Amenities
             </h2>
             <div className="shadow-xl rounded-xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 mb-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 mb-6">
                 <Image
                   src={featureStudio}
                   alt="Studio with sunshine and patio"
-                  className="h-auto rounded-l-xl"
+                  className="rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none object-cover w-full h-full"
                 />
-                <p className="bg-amber-200 px-6 py-4 rounded-r-xl text-2xl font-light font-zilla">
-                  Welcome to our exquisite modern studio unit nestled in the heart of Redcliffs,
-                  just moments away from the pristine shores of Christchurch's beautiful beach. This spacious and
-                  stylish studio boasts an abundance of natural lighting, providing a serene and inviting ambiance.
-                  The highlight of this idyllic retreat is undoubtedly the private deck, where you can indulge in
-                  breathtaking views of the ocean. Fall asleep to the soothing melody of the waves, and wake up to
-                  the refreshing sea breeze – it's a beach lover's dream come true!
+                <div className="flex flex-col justify-center h-auto bg-amber-200 px-6 py-4 rounded-b-xl lg:rounded-r-xl lg:rounded-bl-none text-2xl font-light font-zilla">
+                <p>
+                  Our studio offers a plethora of luxurious features and amenities to make your stay truly memorable. Enjoy the convenience of a private entrance, ensuring your privacy throughout your time here. The well-equipped kitchenette allows you to prepare your favourite meals, while the modern bathroom with a shower guarantees a refreshing experience. For your utmost comfort, a washer is also provided, making longer stays hassle-free. The serene and tranquil setting ensures a peaceful night's sleep, perfect for professionals working in the area, those visiting family in Christchurch, or local tourists seeking a rejuvenating weekend getaway. Additionally, easy access to nearby shops, the dairy, ocean, bike path, and Sumner beach promises endless exploration opportunities.
                 </p>
+                </div>
+                
               </div>
 
             </div>
@@ -153,47 +150,25 @@ export default function Home() {
         </section>
 
 
-        <main className="container mx-auto mt[-200px]">
-          <section id="features" className="bg-amber-200 shadow-lg rounded-lg p-8">
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/2">
-                <Image src={studio08} width={800} height={600} alt="Sunny Studio Unit" className="w-full h-auto rounded-lg mb-4" />
-              </div>
-              <div className="md:w-1/2 md:ml-8">
-                <h2 className="text-2xl font-bold mb-4">About the Studio</h2>
-                <p className="mb-4">Welcome to our exquisite modern studio unit nestled in the heart of Redcliffs,
-                  just moments away from the pristine shores of Christchurch's beautiful beach. This spacious and
-                  stylish studio boasts an abundance of natural lighting, providing a serene and inviting ambiance.
-                  The highlight of this idyllic retreat is undoubtedly the private deck, where you can indulge in
-                  breathtaking views of the ocean. Fall asleep to the soothing melody of the waves, and wake up to
-                  the refreshing sea breeze – it's a beach lover's dream come true!</p>
-                <h2 className="text-2xl font-bold mb-4">Features and Amenities</h2>
-                <ul className="list-disc pl-6">
-                  <li>Private entrance</li>
-                  <li>Kitchenette</li>
-                  <li>Bathroom with shower</li>
-                  <li>Washer</li>
-                  <li>Modern furnishings</li>
-                  <li>Private deck with ocean view</li>
-                  <li>Easy parking</li>
-                  <li>Quiet and serene location</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+      
           {/* 
         <!-- Testimonials section (Optional) -->
         <!-- You can add testimonials here if you have them --> */}
 
-          <section className="mt-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Book Your Seaside Escape Now!</h2>
-            <p className="mb-4">Click the button below to secure your stay at our stunning beachside studio and immerse
+          <section className="mt-8 text-center bg-white">
+            <h2 className="text-3xl font-serif font-bold mb-4">Book Your Seaside Escape Now!</h2>
+            <p className="mb-4 text-xl">Contact Emily today to secure your stay at our stunning beachside studio and immerse
               yourself in the ultimate relaxation and comfort. Unwind by the ocean, bask in the glorious sunsets, and
               create cherished memories in Christchurch that will last a lifetime. Don't miss out on this opportunity
               – your perfect beach vacation awaits!</p>
-            <a href="#" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Book Now</a>
+
+              <div className="flex justify-center">
+                  <a className="mr-4 px-4 py-2 flex items-center" href="tel:022123456">
+                    <div className="w-6 h-6 rounded-full bg-orange-500"> </div>
+                   022 123 456
+                  </a>
+              </div>
           </section>
-        </main>
       </div>
     </>
   );
